@@ -1,8 +1,8 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
-import createRootReducer from './rootReducer';
-import mySaga from '../sagas';
+import createRootReducer from './rootReducer.tsx';
+import mySaga from '../sagas.tsx';
 
 const sagaMiddleware = createSagaMiddleware();
 
