@@ -51,8 +51,8 @@ function getAdditionalModulePaths(options = {}) {
   throw new Error(
     chalk.red.bold(
       'Your project\'s `baseUrl` can only be set to `src` or `node_modules`.' +
-        ' Create React App does not support other values at this time.'
-    )
+        ' Create React App does not support other values at this time.',
+    ),
   );
 }
 
@@ -72,7 +72,7 @@ function getWebpackAliases(options = {}) {
 
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
-      src: paths.appSrc
+      src: paths.appSrc,
     };
   }
 }
@@ -93,7 +93,7 @@ function getJestAliases(options = {}) {
 
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
-      '^src/(.*)$': '<rootDir>/src/$1'
+      '^src/(.*)$': '<rootDir>/src/$1',
     };
   }
 }
@@ -105,7 +105,8 @@ function getModules() {
 
   if (hasTsConfig && hasJsConfig) {
     throw new Error(
-      'You have both a tsconfig.json and a jsconfig.json. If you are using TypeScript please remove your jsconfig.json file.'
+      // eslint-disable-next-line max-len
+      'You have both a tsconfig.json and a jsconfig.json. If you are using TypeScript please remove your jsconfig.json file.',
     );
   }
 
@@ -116,7 +117,7 @@ function getModules() {
   // based on tsconfig.json
   if (hasTsConfig) {
     const ts = require(resolve.sync('typescript', {
-      basedir: paths.appNodeModules
+      basedir: paths.appNodeModules,
     }));
     config = ts.readConfigFile(paths.appTsConfig, ts.sys.readFile).config;
     // Otherwise we'll check if there is jsconfig.json
@@ -131,10 +132,10 @@ function getModules() {
   const additionalModulePaths = getAdditionalModulePaths(options);
 
   return {
-    additionalModulePaths: additionalModulePaths,
+    additionalModulePaths,
     webpackAliases: getWebpackAliases(options),
     jestAliases: getJestAliases(options),
-    hasTsConfig
+    hasTsConfig,
   };
 }
 

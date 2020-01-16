@@ -4,6 +4,7 @@ module.exports = {
         'es6': true
     },
     'extends': [
+        "takamaki",
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:@typescript-eslint/eslint-recommended'

@@ -11,7 +11,7 @@ const init = (appVersion, apiKey) => {
 
   bugsnagClient = bugsnag({
     apiKey,
-    appVersion
+    appVersion,
   });
 
   bugsnagClient.use(bugsnagReact, React);
@@ -30,6 +30,6 @@ export const getBugsnag = (appVersion, apiKey) => {
 
   return {
     bugsnagClient,
-    ErrorBoundary
+    ErrorBoundary,
   };
 };

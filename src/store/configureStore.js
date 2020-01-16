@@ -12,7 +12,7 @@ function configureStoreProd(initialState) {
   const store = createStore(
     createRootReducer(),
     initialState,
-    compose(applyMiddleware(...middlewares))
+    compose(applyMiddleware(...middlewares)),
   );
 
   sagaMiddleware.run(mySaga);
@@ -23,14 +23,14 @@ function configureStoreProd(initialState) {
 function configureStoreDev(initialState) {
   const middlewares = [
     reduxImmutableStateInvariant(),
-    sagaMiddleware
+    sagaMiddleware,
   ];
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
   const store = createStore(
     createRootReducer(),
     initialState,
-    composeEnhancers(applyMiddleware(...middlewares))
+    composeEnhancers(applyMiddleware(...middlewares)),
   );
   sagaMiddleware.run(mySaga);
 
