@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PhoneNumberPickerExample Should render (smoke test) 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-container-1"
+  >
+    <div
+      class="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+        data-shrink="false"
+      >
+        Enter your phone number:
+      </label>
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+      >
+        <input
+          aria-invalid="false"
+          class="MuiInputBase-input MuiInput-input"
+          data-testid="phonenumber_field"
+          placeholder="+358 555 555 555"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-2 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          data-testid="save_button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Save
+          </span>
+        </button>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-2 MuiButton-contained MuiButton-containedSecondary"
+          data-testid="reset_button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Reset
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PhoneNumberPickerExample Should render error (smoke test) 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-container-419"
+  >
+    <div
+      class="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+        data-shrink="false"
+      >
+        Enter your phone number:
+      </label>
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+      >
+        <input
+          aria-invalid="false"
+          class="MuiInputBase-input MuiInput-input"
+          data-testid="phonenumber_field"
+          placeholder="+358 555 555 555"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-420 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          data-testid="save_button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Save
+          </span>
+        </button>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-420 MuiButton-contained MuiButton-containedSecondary"
+          data-testid="reset_button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Reset
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <p
+          class="MuiTypography-root makeStyles-statusMsg-422 MuiTypography-body1 MuiTypography-colorError"
+          data-testid="error_message"
+        >
+          Oh no, something went wrong!
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PhoneNumberPickerExample Should render loading (smoke test) 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-container-209"
+  >
+    <div
+      class="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-disabled Mui-disabled"
+        data-shrink="false"
+      >
+        Enter your phone number:
+      </label>
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-disabled Mui-disabled MuiInputBase-formControl MuiInput-formControl"
+      >
+        <input
+          aria-invalid="false"
+          class="MuiInputBase-input MuiInput-input Mui-disabled Mui-disabled"
+          data-testid="phonenumber_field"
+          disabled=""
+          placeholder="+358 555 555 555"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-210 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          data-testid="save_button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Save
+            <div
+              class="MuiCircularProgress-root makeStyles-circularProgress-211 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              role="progressbar"
+              style="width: 24px; height: 24px;"
+            >
+              <svg
+                class="MuiCircularProgress-svg"
+                viewBox="22 22 44 44"
+              >
+                <circle
+                  class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+                  cx="44"
+                  cy="44"
+                  fill="none"
+                  r="20.2"
+                  stroke-width="3.6"
+                />
+              </svg>
+            </div>
+          </span>
+        </button>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-210 MuiButton-contained MuiButton-containedSecondary Mui-disabled Mui-disabled"
+          data-testid="reset_button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Reset
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`PhoneNumberPickerExample Should render success (smoke test) 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-container-657"
+  >
+    <div
+      class="MuiFormControl-root MuiTextField-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
+        data-shrink="false"
+      >
+        Enter your phone number:
+      </label>
+      <div
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+      >
+        <input
+          aria-invalid="false"
+          class="MuiInputBase-input MuiInput-input"
+          data-testid="phonenumber_field"
+          placeholder="+358 555 555 555"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+    >
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-658 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          data-testid="save_button"
+          disabled=""
+          tabindex="-1"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Save
+          </span>
+        </button>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <button
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-658 MuiButton-contained MuiButton-containedSecondary"
+          data-testid="reset_button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            Reset
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="MuiGrid-root MuiGrid-item"
+      >
+        <p
+          class="MuiTypography-root makeStyles-statusMsg-660 MuiTypography-body1"
+          data-testid="success_message"
+        >
+          Phone number saved succesfully!
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

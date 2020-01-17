@@ -47,4 +47,12 @@ module.exports = {
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',
   ],
+  coverageThreshold: {
+    'global': {
+      'branches': 50,
+      'functions': 50,
+      'lines': 50,
+      'statements': 50,
+    },
+  },
 };

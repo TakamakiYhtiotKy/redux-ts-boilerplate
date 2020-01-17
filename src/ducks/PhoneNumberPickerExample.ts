@@ -116,6 +116,7 @@ const delay = (ms: number) => new Promise(
   (resolve, reject) => {
     
     // 50% chance of success
+    // This is a side-effect as it is unpredictable
     const isSuccess = !!Math.round(Math.random());
 
     if (isSuccess) {

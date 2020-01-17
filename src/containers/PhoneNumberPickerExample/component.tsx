@@ -48,6 +48,10 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
   return (
     <div className={classes.container}>
       <TextField
+        inputProps={{
+          'data-testid': 'phonenumber_field',
+        }}
+        
         disabled={isLoading}
         label="Enter your phone number:"
         onChange={(e: ChangeEvent): void => setPhoneNumber(R.path(['target', 'value'], e) || '')}
@@ -57,6 +61,7 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
       <Grid direction="column" container>
         <Grid item>
           <Button
+            data-testid="save_button"
             disabled={isLoading || !phoneNumber}
             classes={{ root: classes.buttonRoot }}
             variant="contained"
@@ -69,6 +74,7 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
         </Grid>
         <Grid item>
           <Button
+            data-testid="reset_button"
             onClick={(): void => {
               setPhoneNumber('');
               resetPhoneNumber();
@@ -83,12 +89,19 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
         </Grid>
         {isError && (
           <Grid item>
-            <Typography color="error" className={classes.statusMsg}>Oh no, something went wrong!</Typography>
+            <Typography
+              data-testid="error_message"
+              color="error"
+              className={classes.statusMsg}
+            >Oh no, something went wrong!</Typography>
           </Grid>)
         }
         {isSuccess && (
           <Grid item>
-            <Typography className={classes.statusMsg}>Phone number saved succesfully!</Typography>
+            <Typography
+              data-testid="success_message"
+              className={classes.statusMsg}
+            >Phone number saved succesfully!</Typography>
           </Grid>)
         }
       </Grid>
