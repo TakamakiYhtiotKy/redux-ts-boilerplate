@@ -7,7 +7,8 @@ module.exports = {
         "takamaki",
         'eslint:recommended',
         'plugin:react/recommended',
-        'plugin:@typescript-eslint/eslint-recommended'
+        'plugin:@typescript-eslint/eslint-recommended',
+        "plugin:@typescript-eslint/recommended"
     ],
     'globals': {
         'Atomics': 'readonly',
@@ -26,6 +27,7 @@ module.exports = {
         '@typescript-eslint'
     ],
     'rules': {
+        'react/prop-types': 0,
         'indent': [
             'error',
             2
