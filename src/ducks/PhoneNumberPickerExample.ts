@@ -2,7 +2,7 @@
 // https://github.com/erikras/ducks-modular-redux
 // https://github.com/alexnm/re-ducks
 
-import { put, takeEvery, all } from 'redux-saga/effects';
+import { put, takeEvery, all, call } from 'redux-saga/effects';
 import { Reducer } from 'redux';
 
 interface StateInterface {
@@ -22,7 +22,7 @@ interface SavePhoneNumberSuccessInterface {
     type: typeof SAVE_PHONENUMBER_SUCCESS;
     phonenumber?: string;
 }
-  
+
 interface ResetPhoneNumberInterface {
     type: typeof RESET_PHONENUMBER;
 }
@@ -109,12 +109,12 @@ export function resetPhoneNumber(): ActionCreatorInterface {
 export function savePhoneNumber(phonenumber?: string): SavePhoneNumberStartInterface {
   return { type: SAVE_PHONENUMBER_START, phonenumber };
 }
-  
+
 // Sagas for side-effects
 
 const delay = (ms: number) => new Promise(
   (resolve, reject) => {
-    
+
     // 50% chance of success
     // This is a side-effect as it is unpredictable
     const isSuccess = !!Math.round(Math.random());
@@ -124,14 +124,14 @@ const delay = (ms: number) => new Promise(
     } else {
       setTimeout(reject, ms);
     }
-    
+
   },
 );
 
 
 function* savePhoneNumberStart(action: SavePhoneNumberStartInterface) {
   try {
-    yield delay(1000);
+    yield call(delay, 1000);
     yield put({ type: SAVE_PHONENUMBER_SUCCESS, phonenumber: action.phonenumber });
   } catch (e) {
     yield put({ type: SAVE_PHONENUMBER_ERROR });
