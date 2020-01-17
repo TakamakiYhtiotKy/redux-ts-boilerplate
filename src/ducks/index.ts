@@ -1,6 +1,5 @@
 import { all } from 'redux-saga/effects';
 import { Reducer } from 'redux';
-// eslint-disable-next-line import/no-unresolved
 import phoneNumberPicker from './PhoneNumberPickerExample';
 
 interface ReducerMapInterface {

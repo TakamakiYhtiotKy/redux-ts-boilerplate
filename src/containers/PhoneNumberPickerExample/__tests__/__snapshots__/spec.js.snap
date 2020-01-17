@@ -74,7 +74,7 @@ exports[`PhoneNumberPickerExample Should render (smoke test) 1`] = `
 exports[`PhoneNumberPickerExample Should render error (smoke test) 1`] = `
 <DocumentFragment>
   <div
-    class="makeStyles-container-419"
+    class="makeStyles-container-627"
   >
     <div
       class="MuiFormControl-root MuiTextField-root"
@@ -105,7 +105,7 @@ exports[`PhoneNumberPickerExample Should render error (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-420 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-628 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
           data-testid="save_button"
           disabled=""
           tabindex="-1"
@@ -122,7 +122,7 @@ exports[`PhoneNumberPickerExample Should render error (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-420 MuiButton-contained MuiButton-containedSecondary"
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-628 MuiButton-contained MuiButton-containedSecondary"
           data-testid="reset_button"
           tabindex="0"
           type="button"
@@ -141,7 +141,7 @@ exports[`PhoneNumberPickerExample Should render error (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <p
-          class="MuiTypography-root makeStyles-statusMsg-422 MuiTypography-body1 MuiTypography-colorError"
+          class="MuiTypography-root makeStyles-statusMsg-630 MuiTypography-body1 MuiTypography-colorError"
           data-testid="error_message"
         >
           Oh no, something went wrong!
@@ -155,7 +155,7 @@ exports[`PhoneNumberPickerExample Should render error (smoke test) 1`] = `
 exports[`PhoneNumberPickerExample Should render loading (smoke test) 1`] = `
 <DocumentFragment>
   <div
-    class="makeStyles-container-209"
+    class="makeStyles-container-417"
   >
     <div
       class="MuiFormControl-root MuiTextField-root"
@@ -187,7 +187,7 @@ exports[`PhoneNumberPickerExample Should render loading (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-210 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-418 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
           data-testid="save_button"
           disabled=""
           tabindex="-1"
@@ -198,7 +198,7 @@ exports[`PhoneNumberPickerExample Should render loading (smoke test) 1`] = `
           >
             Save
             <div
-              class="MuiCircularProgress-root makeStyles-circularProgress-211 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+              class="MuiCircularProgress-root makeStyles-circularProgress-419 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
               role="progressbar"
               style="width: 24px; height: 24px;"
             >
@@ -223,7 +223,7 @@ exports[`PhoneNumberPickerExample Should render loading (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-210 MuiButton-contained MuiButton-containedSecondary Mui-disabled Mui-disabled"
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-418 MuiButton-contained MuiButton-containedSecondary Mui-disabled Mui-disabled"
           data-testid="reset_button"
           disabled=""
           tabindex="-1"
@@ -244,7 +244,7 @@ exports[`PhoneNumberPickerExample Should render loading (smoke test) 1`] = `
 exports[`PhoneNumberPickerExample Should render success (smoke test) 1`] = `
 <DocumentFragment>
   <div
-    class="makeStyles-container-657"
+    class="makeStyles-container-865"
   >
     <div
       class="MuiFormControl-root MuiTextField-root"
@@ -275,7 +275,7 @@ exports[`PhoneNumberPickerExample Should render success (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-658 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-866 MuiButton-contained MuiButton-containedPrimary Mui-disabled Mui-disabled"
           data-testid="save_button"
           disabled=""
           tabindex="-1"
@@ -292,7 +292,7 @@ exports[`PhoneNumberPickerExample Should render success (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <button
-          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-658 MuiButton-contained MuiButton-containedSecondary"
+          class="MuiButtonBase-root MuiButton-root makeStyles-buttonRoot-866 MuiButton-contained MuiButton-containedSecondary"
           data-testid="reset_button"
           tabindex="0"
           type="button"
@@ -311,7 +311,7 @@ exports[`PhoneNumberPickerExample Should render success (smoke test) 1`] = `
         class="MuiGrid-root MuiGrid-item"
       >
         <p
-          class="MuiTypography-root makeStyles-statusMsg-660 MuiTypography-body1"
+          class="MuiTypography-root makeStyles-statusMsg-868 MuiTypography-body1"
           data-testid="success_message"
         >
           Phone number saved succesfully!

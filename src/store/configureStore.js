@@ -3,7 +3,6 @@ import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import createRootReducer from './rootReducer.tsx';
-// eslint-disable-next-line import/no-unresolved
 import { sagas } from '../ducks';
 
 const sagaMiddleware = createSagaMiddleware();

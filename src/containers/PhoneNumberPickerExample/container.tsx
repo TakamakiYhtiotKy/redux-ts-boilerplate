@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as R from 'ramda';
 
-// eslint-disable-next-line import/no-unresolved
 import { resetPhoneNumber, savePhoneNumber } from '../../ducks/PhoneNumberPickerExample';
 
 import Component from './component';
