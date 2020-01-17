@@ -69,7 +69,10 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
         </Grid>
         <Grid item>
           <Button
-            onClick={(): void => resetPhoneNumber()}
+            onClick={(): void => {
+              setPhoneNumber('');
+              resetPhoneNumber();
+            }}
             disabled={isLoading}
             classes={{ root: classes.buttonRoot }}
             variant="contained"

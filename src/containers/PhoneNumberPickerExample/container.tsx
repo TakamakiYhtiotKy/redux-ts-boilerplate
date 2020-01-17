@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import * as R from 'ramda';
 
 // eslint-disable-next-line import/no-unresolved
-import * as actions from '../../ducks/PhoneNumberPickerExample';
+import { resetPhoneNumber, savePhoneNumber } from '../../ducks/PhoneNumberPickerExample';
 
 import Component from './component';
 
@@ -14,11 +15,11 @@ interface MyStateProps {
   }
   
 
-function mapStateToProps(): MyStateProps {
+function mapStateToProps(state: MyStateProps): MyStateProps {
   return {
-    isLoading: false,
-    isError: false,
-    isSuccess: false,
+    isLoading: R.path(['phoneNumberPicker', 'isLoading'], state) || false,
+    isError: R.path(['phoneNumberPicker', 'isError'], state) || false,
+    isSuccess: R.path(['phoneNumberPicker', 'isSuccess'], state) || false,
   };
 }
 
@@ -29,7 +30,7 @@ interface MyDispatchProps {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapDispatchToProps(dispatch: any): MyDispatchProps{
-  return bindActionCreators(actions, dispatch);
+  return bindActionCreators({ resetPhoneNumber, savePhoneNumber }, dispatch);
 }
 
 export default connect(

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { combineReducers } from 'redux';
 // eslint-disable-next-line import/no-unresolved
-import * as reducers from '../ducks/index';
+import reducers from '../ducks/index';
  
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 // https://github.com/erikras/ducks-modul ar-redux
