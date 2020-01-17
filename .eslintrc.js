@@ -34,7 +34,11 @@ module.exports = {
   },
   globals: {
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly"
+    SharedArrayBuffer: "readonly",
+    cy: true,
+    context: true,
+    Cypress: true,
+    assert: true
   },
   overrides: [
     {
