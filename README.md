@@ -66,6 +66,9 @@ For Ducks it is recommended to use redux-saga-test-plan library and regular Jest
 
 For examples see __tests__ folder in ducks folder. Tests for sagas can also be written with only Jest, but this may not be as easy. 
 
+## Suggest changes
+
+Pull requests are very welcome! Please just add Valtteri Laine as reviewer. This is far from perfect so improvements should be made.
 
 ## Learn More
 
