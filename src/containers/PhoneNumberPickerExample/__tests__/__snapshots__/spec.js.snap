@@ -12,7 +12,7 @@ exports[`PhoneNumberPickerExample Should render (smoke test) 1`] = `
         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
         data-shrink="false"
       >
-        Enter your phone number:
+        Enter your phone number
       </label>
       <div
         class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
@@ -83,7 +83,7 @@ exports[`PhoneNumberPickerExample Should render error (smoke test) 1`] = `
         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
         data-shrink="false"
       >
-        Enter your phone number:
+        Enter your phone number
       </label>
       <div
         class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
@@ -164,7 +164,7 @@ exports[`PhoneNumberPickerExample Should render loading (smoke test) 1`] = `
         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated Mui-disabled Mui-disabled"
         data-shrink="false"
       >
-        Enter your phone number:
+        Enter your phone number
       </label>
       <div
         class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-disabled Mui-disabled MuiInputBase-formControl MuiInput-formControl"
@@ -253,7 +253,7 @@ exports[`PhoneNumberPickerExample Should render success (smoke test) 1`] = `
         class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated"
         data-shrink="false"
       >
-        Enter your phone number:
+        Enter your phone number
       </label>
       <div
         class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"

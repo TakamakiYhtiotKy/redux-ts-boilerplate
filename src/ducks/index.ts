@@ -20,7 +20,7 @@ export default reducerMap;
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export function* sagas() {
   yield all([
-    phoneNumberPicker.rootSaga(),
+    phoneNumberPicker.saga(),
     // Add sagas for each duck here
   ]);
 }

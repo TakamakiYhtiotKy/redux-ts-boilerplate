@@ -10,7 +10,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 const useStyles = makeStyles((theme: Theme) => ({
-  
+
   container: {
     margin: theme.spacing(2),
   },
@@ -43,7 +43,7 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
 
   const classes = useStyles();
   const [phoneNumber, setPhoneNumber] = useState('');
-  
+
 
   return (
     <div className={classes.container}>
@@ -51,9 +51,9 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
         inputProps={{
           'data-testid': 'phonenumber_field',
         }}
-        
+
         disabled={isLoading}
-        label="Enter your phone number:"
+        label="Enter your phone number"
         onChange={(e: ChangeEvent): void => setPhoneNumber(R.path(['target', 'value'], e) || '')}
         placeholder={'+358 555 555 555'}
         value={phoneNumber}
@@ -108,5 +108,5 @@ const PhoneNumberPickerExample: React.SFC<PhoneNumberPickerExampleProps> = ({
     </div>
   );
 };
- 
+
 export default PhoneNumberPickerExample;

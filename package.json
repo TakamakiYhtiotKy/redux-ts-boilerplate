@@ -110,6 +110,7 @@
   "devDependencies": {
     "@testing-library/react": "^9.4.0",
     "@types/material-ui": "^0.21.7",
-    "@types/ramda": "^0.26.39"
+    "@types/ramda": "^0.26.39",
+    "redux-saga-test-plan": "^4.0.0-rc.3"
   }
 }

@@ -6,10 +6,10 @@ import { put, takeEvery, all, call } from 'redux-saga/effects';
 import { Reducer } from 'redux';
 
 interface StateInterface {
-    phonenumber?: string;
-    isError?: boolean;
-    isSuccess?: boolean;
-    isLoading?: boolean;
+  phonenumber?: string;
+  isError?: boolean;
+  isSuccess?: boolean;
+  isLoading?: boolean;
 }
 
 // Actions
@@ -110,28 +110,29 @@ export function savePhoneNumber(phonenumber?: string): SavePhoneNumberStartInter
   return { type: SAVE_PHONENUMBER_START, phonenumber };
 }
 
-// Sagas for side-effects
+// Api
 
-const delay = (ms: number) => new Promise(
+export const postPhoneNumber = (phonenumber?: string) => new Promise(
   (resolve, reject) => {
 
-    // 50% chance of success
-    // This is a side-effect as it is unpredictable
-    const isSuccess = !!Math.round(Math.random());
+    // 50% chance of success, unpredictable
+    const isSuccess = true;//!!Math.round(Math.random());
 
     if (isSuccess) {
-      setTimeout(resolve, ms);
+      setTimeout(resolve, 1000);
     } else {
-      setTimeout(reject, ms);
+      setTimeout(reject, 1000);
     }
 
   },
 );
 
+// Sagas for side-effects
+
 
 function* savePhoneNumberStart(action: SavePhoneNumberStartInterface) {
   try {
-    yield call(delay, 1000);
+    yield call(postPhoneNumber, action.phonenumber);
     yield put({ type: SAVE_PHONENUMBER_SUCCESS, phonenumber: action.phonenumber });
   } catch (e) {
     yield put({ type: SAVE_PHONENUMBER_ERROR });
@@ -144,7 +145,7 @@ function* watchSavePhoneNumberAsync() {
 
 // notice how we now only export the rootSaga
 // single entry point to start all Sagas at once
-function* rootSaga() {
+function* saga() {
   yield all([
     watchSavePhoneNumberAsync(),
   ]);
@@ -153,5 +154,8 @@ function* rootSaga() {
 
 export default {
   reducer,
-  rootSaga,
+  saga,
+  api: {
+    postPhoneNumber,
+  },
 };
