@@ -93,7 +93,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "cypress:open": "cypress open",
-    "e2e": "cypress run && node cypress/resetSettings"
+    "e2e": "cypress run"
   },
   "browserslist": {
     "production": [
