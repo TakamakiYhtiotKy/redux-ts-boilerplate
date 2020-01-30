@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 // https://github.com/erikras/ducks-modular-redux
 // https://github.com/alexnm/re-ducks
+// https://redux-toolkit.js.org/introduction/quick-start
 
 import { put, takeEvery, all, call } from 'redux-saga/effects';
-import { Reducer } from 'redux';
+import { createReducer, createAction } from '@reduxjs/toolkit';
 
-interface StateInterface {
+interface State {
   phonenumber?: string;
   isError?: boolean;
   isSuccess?: boolean;
@@ -13,42 +14,12 @@ interface StateInterface {
 }
 
 // Actions
-const SAVE_PHONENUMBER_START = 'SAVE_PHONENUMBER_START';
-const RESET_PHONENUMBER = 'RESET_PHONENUMBER';
-const SAVE_PHONENUMBER_SUCCESS = 'SAVE_PHONENUMBER_SUCCESS';
-const SAVE_PHONENUMBER_ERROR = 'SAVE_PHONENUMBER_ERROR';
-
-interface SavePhoneNumberSuccessInterface {
-    type: typeof SAVE_PHONENUMBER_SUCCESS;
-    phonenumber?: string;
-}
-
-interface ResetPhoneNumberInterface {
-    type: typeof RESET_PHONENUMBER;
-}
-
-interface SavePhoneNumberStartInterface {
-  type: typeof SAVE_PHONENUMBER_START;
-  phonenumber?: string;
-}
-
-interface SavePhoneNumberErrorInterface {
-  type: typeof SAVE_PHONENUMBER_ERROR;
-}
-
-interface ActionsMapInterface {
-    [SAVE_PHONENUMBER_START]: (state: StateInterface, action: SavePhoneNumberStartInterface) => StateInterface;
-    [SAVE_PHONENUMBER_SUCCESS]: (state: StateInterface, action: SavePhoneNumberSuccessInterface) => StateInterface;
-    [RESET_PHONENUMBER]: () => StateInterface;
-    [SAVE_PHONENUMBER_ERROR]: () => StateInterface;
-}
-
-
-type actionTypes = SavePhoneNumberSuccessInterface | ResetPhoneNumberInterface
-
-interface ActionCreatorInterface {
-    type: string;
-}
+export const savePhoneNumber = createAction('SAVE_PHONENUMBER_START');
+export const resetPhoneNumber = createAction('RESET_PHONENUMBER');
+const savePhoneNumberSuccess = createAction(
+  'SAVE_PHONENUMBER_SUCCESS', (phonenumber: string) => ({ payload: phonenumber }),
+);
+const savePhoneNumberError = createAction('SAVE_PHONENUMBER_ERROR');
 
 const initialState = {
   phonenumber: '',
@@ -57,58 +28,31 @@ const initialState = {
   isSuccess: false,
 };
 
-
-// Reducer
-const actionsMap: ActionsMapInterface = {
-  [SAVE_PHONENUMBER_START]: (state: StateInterface) => {
-    return {
-      ...state,
-      isLoading: true,
-      isSuccess: false,
-      isError: false,
-    };
+const reducer = createReducer(initialState, {
+  [savePhoneNumber.toString()]: (state: State) => {
+    state.isLoading = true;
+    state.isSuccess = false;
+    state.isError = false;
   },
-  [RESET_PHONENUMBER]: () => {
-    return {
-      isError: false,
-      isSuccess: false,
-      isLoading: false,
-      phonenumber: '',
-    };
+  [resetPhoneNumber.toString()]: (state: State) => {
+    state.isError = false;
+    state.isSuccess = false;
+    state.isLoading = false;
+    state.phonenumber = '';
   },
-  [SAVE_PHONENUMBER_SUCCESS]: (state: StateInterface, action: SavePhoneNumberSuccessInterface) => {
-    return {
-      isSuccess: true,
-      isError: false,
-      isLoading: false,
-      phonenumber: action.phonenumber,
-    };
+  [savePhoneNumberSuccess.toString()]: (state: State, action) => {
+    state.isSuccess = true;
+    state.isError = false;
+    state.isLoading = false;
+    state.phonenumber = action.payload;
   },
-  [SAVE_PHONENUMBER_ERROR]: () => {
-    return {
-      isSuccess: false,
-      isError: true,
-      isLoading: false,
-    };
+  [savePhoneNumberError.toString()]: (state: State) => {
+    state.isSuccess = false;
+    state.isError = true;
+    state.isLoading = false;
   },
-};
+});
 
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const reducer: Reducer<unknown, any> = (state = initialState, action: actionTypes) => {
-  const reduceFn: Function = actionsMap[action.type];
-  if (!reduceFn) return state;
-  return reduceFn(state, action);
-};
-
-// Action Creators
-export function resetPhoneNumber(): ActionCreatorInterface {
-  return { type: RESET_PHONENUMBER };
-}
-
-export function savePhoneNumber(phonenumber?: string): SavePhoneNumberStartInterface {
-  return { type: SAVE_PHONENUMBER_START, phonenumber };
-}
 
 // Api
 
@@ -128,19 +72,17 @@ export const postPhoneNumber = (phonenumber?: string) => new Promise(
 );
 
 // Sagas for side-effects
-
-
-function* savePhoneNumberStart(action: SavePhoneNumberStartInterface) {
+function* savePhoneNumberStart(action: ActionCreator) {
   try {
-    yield call(postPhoneNumber, action.phonenumber);
-    yield put({ type: SAVE_PHONENUMBER_SUCCESS, phonenumber: action.phonenumber });
+    yield call(postPhoneNumber, action.payload);
+    yield put(savePhoneNumberSuccess(action.payload));
   } catch (e) {
-    yield put({ type: SAVE_PHONENUMBER_ERROR });
+    yield put(savePhoneNumberError());
   }
 }
 
 function* watchSavePhoneNumberAsync() {
-  yield takeEvery(SAVE_PHONENUMBER_START, savePhoneNumberStart);
+  yield takeEvery(savePhoneNumber.toString(), savePhoneNumberStart);
 }
 
 // notice how we now only export the rootSaga

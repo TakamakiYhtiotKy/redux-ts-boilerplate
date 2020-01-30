@@ -48,6 +48,12 @@ module.exports = {
         es6: true,
         jest: true
       },
+      rules: {
+        "react/prop-types": 0,
+        indent: ["error", 2],
+        quotes: ["error", "single"],
+        semi: ["error", "always"]
+      },
       extends: [
         "takamaki",
         "eslint:recommended",

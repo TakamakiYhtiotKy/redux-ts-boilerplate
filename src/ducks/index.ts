@@ -2,12 +2,12 @@ import { all } from 'redux-saga/effects';
 import { Reducer } from 'redux';
 import phoneNumberPicker from './PhoneNumberPickerExample';
 
-interface ReducerMapInterface {
+interface ReducerMap {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    phoneNumberPicker: Reducer<unknown, any>;
+    phoneNumberPicker: Reducer<any, any>;
 }
 
-const reducerMap: ReducerMapInterface = {
+const reducerMap: ReducerMap = {
   phoneNumberPicker: phoneNumberPicker.reducer,
   // Add reducers for each duck here
 };

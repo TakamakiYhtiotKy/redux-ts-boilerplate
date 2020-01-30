@@ -13,7 +13,7 @@ describe('sagas', () => {
       .provide([[call(PhoneNumberPicker.api.postPhoneNumber), '555']])
       .call(PhoneNumberPicker.api.postPhoneNumber, '555')
 
-      .put({ type: 'SAVE_PHONENUMBER_SUCCESS', phonenumber: '555' })
+      .put({ type: 'SAVE_PHONENUMBER_SUCCESS', payload: '555' })
       .dispatch(actions.savePhoneNumber('555'))
       .hasFinalState({
         phonenumber: '555',
@@ -34,9 +34,10 @@ describe('sagas', () => {
       .provide([[call(PhoneNumberPicker.api.postPhoneNumber, '555'), throwError(new Error('fail'))]])
       .call(PhoneNumberPicker.api.postPhoneNumber, '555')
 
-      .dispatch({ type: 'SAVE_PHONENUMBER_START', phonenumber: '555' })
-      .put({ type: 'SAVE_PHONENUMBER_ERROR' })
+      .dispatch({ type: 'SAVE_PHONENUMBER_START', payload: '555' })
+      .put({ type: 'SAVE_PHONENUMBER_ERROR', payload: undefined })
       .hasFinalState({
+        phonenumber: '',
         isLoading: false,
         isError: true,
         isSuccess: false,
