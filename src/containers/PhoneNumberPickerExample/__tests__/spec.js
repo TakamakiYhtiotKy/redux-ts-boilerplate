@@ -53,7 +53,7 @@ describe('PhoneNumberPickerExample', () => {
     const { asFragment } = render(
       <MuiThemeProvider theme={theme}>
         <Component
-          isLoading={true}
+          isLoading
         />
       </MuiThemeProvider>,
     );
@@ -65,7 +65,7 @@ describe('PhoneNumberPickerExample', () => {
     const { asFragment } = render(
       <MuiThemeProvider theme={theme}>
         <Component
-          isError={true}
+          isError
         />
       </MuiThemeProvider>,
     );
@@ -77,7 +77,7 @@ describe('PhoneNumberPickerExample', () => {
     const { asFragment } = render(
       <MuiThemeProvider theme={theme}>
         <Component
-          isSuccess={true}
+          isSuccess
         />
       </MuiThemeProvider>,
     );
