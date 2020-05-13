@@ -2,7 +2,7 @@
 import PhoneNumberPicker, * as actions from '../PhoneNumberPickerExample';
 import { expectSaga } from 'redux-saga-test-plan';
 import { throwError } from 'redux-saga-test-plan/providers';
-import { call } from 'redux-saga/effects';
+import * as matchers from 'redux-saga-test-plan/matchers';
 
 
 describe('sagas', () => {
@@ -10,7 +10,7 @@ describe('sagas', () => {
     return expectSaga(PhoneNumberPicker.saga, actions.savePhoneNumber('555'))
       .withReducer(PhoneNumberPicker.reducer)
 
-      .provide([[call(PhoneNumberPicker.api.postPhoneNumber), '555']])
+      .provide([[matchers.call.fn(PhoneNumberPicker.api.postPhoneNumber), '555']])
       .call(PhoneNumberPicker.api.postPhoneNumber, '555')
 
       .put({ type: 'SAVE_PHONENUMBER_SUCCESS', payload: '555' })
@@ -31,7 +31,7 @@ describe('sagas', () => {
     return expectSaga(PhoneNumberPicker.saga, actions.savePhoneNumber('555'))
       .withReducer(PhoneNumberPicker.reducer)
 
-      .provide([[call(PhoneNumberPicker.api.postPhoneNumber, '555'), throwError(new Error('fail'))]])
+      .provide([[matchers.call.fn(PhoneNumberPicker.api.postPhoneNumber, '555'), throwError(new Error('fail'))]])
       .call(PhoneNumberPicker.api.postPhoneNumber, '555')
 
       .dispatch({ type: 'SAVE_PHONENUMBER_START', payload: '555' })
