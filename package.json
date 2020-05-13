@@ -1,7 +1,6 @@
 {
   "name": "redux-ts-boilerplate",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
   "author": "Valtteri Laine",
   "dependencies": {
     "@babel/core": "7.7.4",
