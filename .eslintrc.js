@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["takamaki", "react-app"],
+  extends: ["@takamaki-group/eslint-config-takamaki", "react-app"],
   settings: {
     react: {
       pragma: "React",
@@ -55,7 +55,7 @@ module.exports = {
         semi: ["error", "always"]
       },
       extends: [
-        "takamaki",
+        "@takamaki-group/eslint-config-takamaki",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
